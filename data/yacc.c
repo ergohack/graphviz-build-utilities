@@ -225,7 +225,7 @@ m4_define([b4_declare_parser_state_variables], [b4_pure_if([[
     /* Number of syntax errors so far.  */
     int yynerrs;
 ]])[
-    int yystate;
+    yytype_int16 yystate;
     /* Number of tokens to shift before error messages enabled.  */
     int yyerrstatus;
 
@@ -1528,10 +1528,10 @@ b4_c_function_def([[yyparse]], [[int]], b4_parse_param)[
   [b4_declare_parser_state_variables
 ])b4_lac_if([[
   int yy_lac_established = 0;]])[
-  int yyn;
+  yytype_int16 yyn;
   int yyresult;
   /* Lookahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  yytype_int16 yytoken = 0;
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;]b4_locations_if([[
